@@ -31,7 +31,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     edad: 25
   }
   fecha: Date= new Date();
-  valorProsema= new Promise<string> ((resolve)=>{
+  valorPromesa= new Promise<string> ((resolve)=>{
     setTimeout(() => {
       resolve('Llego la info');
     }, 3500);
@@ -47,6 +47,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{nombre | uppercase}}</td>
  </tr>
 ```
+salida: SPIDER MAN
 ### lowercase
 ```html
 <tr>
@@ -55,6 +56,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{nombre | lowercase}}</td>
 </tr>
 ```
+salida: spider man
 ### slice
 ```html
 <tr>
@@ -63,6 +65,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
      <td>{{nombre | slice: 3}}</td>
 </tr>
 ```
+salida: der Man
 ### slice
 ```html
 <tr>
@@ -71,6 +74,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
      <td>{{nombre | slice: 0: 3}}</td>
 </tr>
 ```
+salida: Spi
 ### number
 ```html
 <tr>
@@ -79,6 +83,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{PI | number}}</td>
 </tr>
 ```
+salida: 3, 142
 ### number
 ```html
 <tr>
@@ -87,6 +92,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{PI | number: '1.0-0'}}</td>
 </tr>
 ```
+salida: 3
 ### number
 ```html
 <tr>
@@ -95,6 +101,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{PI | number: '.0-2'}}</td>
 </tr>
 ```
+salida: 3, 14
 ### percent
 ```html
 <tr>
@@ -103,6 +110,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{valor | percent}}</td>
 </tr>
 ```
+salida: 35%
 ### percent
 ```html
 <tr>
@@ -111,7 +119,8 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{valor | percent: '2.2-2'}}</td>
 </tr>
 ```
-### percent
+salida: 34, 69%
+### currency
 ```html
 <tr>
     <td>{{salario}}</td>
@@ -119,7 +128,8 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{salario | currency}}</td>
 </tr>
 ```
-### percent
+salida: 1.000,50 US$
+### currency
 ```html
 <tr>
     <td>{{salario}}</td>
@@ -127,7 +137,8 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{salario | currency: 'EUR'}}</td>
 </tr>
 ```
-### percent
+salida: 1.999,50 €
+### currency
 ```html
 <tr>
     <td>{{salario}}</td>
@@ -135,14 +146,17 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{salario | currency: 'EUR': 'symbol': '.0-0'}}</td>
 </tr>
 ```
+salida: 1.001 €
 ### async
 ```html
 <tr>
     <td>{{valorProsema}}</td>
     <td>async</td>
-    <td>{{valorProsema | async }}</td>
+    <td>{{valorPromesa | async }}</td>
 </tr>
 ```
+salida: La función valorPromesa, entra en un setTimeOut e
+imprime un string despues de un determinado tiempo.
 ### date
 ```html
 <tr>
@@ -151,6 +165,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{fecha | date }}</td>
 </tr>
 ```
+salida: 26 ago. 2020
 ### date
 ```html
 <tr>
@@ -159,6 +174,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{fecha | date: 'medium' }}</td>
 </tr>
 ```
+ salida: 26 ago. 2020 23:48:06
 ### date
 ```html
 <tr>
@@ -167,6 +183,7 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{fecha | date: 'short' }}</td>
 </tr>
 ```
+ salida: 26/8/20 23:48
 ### date
 ```html
 <tr>
@@ -175,7 +192,8 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
     <td>{{fecha | date: 'MMMM - dd' }}</td>
 </tr>
 ```
-### date
+salida: agosto - 26
+### json
 ```html
 <h3>JSON</h3>
         <div class="row mb-5">
@@ -186,3 +204,23 @@ Este poyecto construido en [Angular CLI](https://github.com/angular/angular-cli)
             </div>
         </div>
 ```
+salida: 
+```json
+{
+  "nomnre": "ryan",
+  "rango": "cabo",
+  "edad": 25
+}
+```
+### json
+```html
+<ul>
+    <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
+    </ul>
+```
+salida: 
+-6
+-7
+-8
+-9
+-10
