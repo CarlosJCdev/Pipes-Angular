@@ -1,0 +1,129 @@
+<h1 class="mt-3">Pipes <small>Angular</small> </h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Variable</th>
+                    <th>Pipe</th>
+                    <th>Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>uppercase</td>
+                    <td>{{nombre | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>lowecase</td>
+                    <td>{{nombre | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>slice:3</td>
+                    <td>{{nombre | slice: 3}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>slice:0:3</td>
+                    <td>{{nombre | slice:0:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>decimal/number</td>
+                    <td>{{PI | number}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>decimal/number</td>
+                    <td>{{PI | number: '1.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>decimal/number</td>
+                    <td>{{PI | number: '.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{valor}}</td>
+                    <td>percent</td>
+                    <td>{{valor | percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{valor}}</td>
+                    <td>percent</td>
+                    <!-- Dos posiciones enteras y dos decimales -->
+                    <td>{{valor | percent: '2.2-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency</td>
+                    <!-- Podemos pasar el tipo de moneda, el código de la moneda, y el formato numerico -->
+                    <td>{{salario | currency}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency</td>
+                    <td>{{salario | currency: 'EUR'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency</td>
+                    <td>{{salario | currency: 'EUR': 'symbol': '.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{valorProsema}}</td>
+                    <td>async</td>
+                    <td>{{valorProsema | async }}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date }}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date: 'medium' }}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date: 'short' }}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date: 'MMMM - dd' }}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date
+                        <br>
+                        <button (click)="idioma= 'es'" class="mr-1 btn btn-primary">Español</button>
+                        <button (click)="idioma= 'en'" class="mr-1 btn btn-secondary">Inglés</button>
+                        <button (click)="idioma= 'fr'" class="mr-1 btn btn-success">Francés</button>
+                    </td>
+                    <td>{{fecha | date: 'MMMM - dd':'': idioma }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Slice</h4>
+        <ul>
+            <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
+        </ul>
+        <h3>JSON</h3>
+        <div class="row mb-5">
+            <div class="col">
+                <pre>
+                {{ soldado | json}}
+              </pre>
+            </div>
+        </div>
+    </div>
+</div>
